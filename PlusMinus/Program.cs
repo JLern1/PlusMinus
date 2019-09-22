@@ -8,14 +8,37 @@ namespace PlusMinus
 {
     class Program
     {
+        static void plusMinus(int[] arr)
+        {
+            int pos = 0;
+            int neg = 0;
+            int zero = 0;
+
+            foreach (var number in arr)
+            {
+                if (number > 0)
+                {
+                    pos++;
+                }
+                else if (number < 0)
+                {
+                    neg++;
+                }
+                else
+                {
+                    zero++;
+                }
+            }
+
+            Console.WriteLine((double)pos/arr.Length);
+            Console.WriteLine((double)neg/arr.Length);
+            Console.WriteLine((double)zero/arr.Length);
+        }
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
-
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            int[] arr = {1,1,0,-1,-1};
+            plusMinus(arr);
+            Console.ReadLine();
         }
     }
 }
